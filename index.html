@@ -28,17 +28,36 @@ body {
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 64px;
+    margin-bottom: 10px;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+h2 {
+    font-size: 34px;
+    line-height: 1.4;
+    max-width: 700px;
+    animation: fadeIn 2.5s ease forwards;
+}
+
+.glow {
+    text-shadow: 0 0 10px rgba(255,255,255,0.6),
+                 0 0 20px rgba(255,255,255,0.4);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px rgba(255,255,255,0.4); }
+    to { text-shadow: 0 0 25px rgba(255,255,255,0.8); }
 }
 
 button {
-    padding: 15px 35px;
-    font-size: 18px;
-    margin: 15px;
+    padding: 16px 40px;
+    font-size: 20px;
+    margin: 20px;
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    transition: 0.3s;
 }
 
 #yes {
@@ -46,12 +65,8 @@ button {
     color: #ff4d6d;
 }
 
-#yes:hover {
-    transform: scale(1.1);
-}
-
 #no {
-    background: #222;
+    background: #111;
     color: white;
     position: absolute;
 }
@@ -60,22 +75,26 @@ button {
 
 <body>
 
-<h1>Hey Arin 💕<br>Will you be my Valentine?</h1>
+<h1>Hey Arin ❤️</h1>
 
-<button id="yes" onclick="celebrate()">Yes ❤️</button>
-<button id="no">No 🙈</button>
+<button id="yes" onclick="celebrate()">Yes</button>
+<button id="no">No</button>
 
 <script>
 function celebrate() {
     document.body.innerHTML = `
-    <h1>Yayyy ❤️<br>You just made me the happiest guy alive 😘</h1>
-    <h2>I promise to make this Valentine unforgettable 💫</h2>
+    <h1 class="glow">Yayyy ❤️</h1>
+    <h2>
+    Fights happen. Love stays.<br><br>
+    You’re the luckiest girl in this world —<br>
+    because I’m still here, choosing us.<br><br>
+    Let’s fix things and celebrate today 💫
+    </h2>
     `;
 }
 
-// Move NO button randomly when hovered
+// Moving NO button
 const noBtn = document.getElementById("no");
-
 noBtn.addEventListener("mouseover", () => {
     const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
     const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
@@ -86,3 +105,4 @@ noBtn.addEventListener("mouseover", () => {
 
 </body>
 </html>
+
