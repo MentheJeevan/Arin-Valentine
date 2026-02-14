@@ -28,33 +28,13 @@ body {
 }
 
 h1 {
-    font-size: 64px;
-    margin-bottom: 10px;
-    animation: fadeIn 1.5s ease forwards;
-}
-
-h2 {
-    font-size: 34px;
-    line-height: 1.4;
-    max-width: 700px;
-    animation: fadeIn 2.5s ease forwards;
-}
-
-.glow {
-    text-shadow: 0 0 10px rgba(255,255,255,0.6),
-                 0 0 20px rgba(255,255,255,0.4);
-    animation: glow 2s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-    from { text-shadow: 0 0 10px rgba(255,255,255,0.4); }
-    to { text-shadow: 0 0 25px rgba(255,255,255,0.8); }
+    font-size: 36px;
 }
 
 button {
-    padding: 16px 40px;
-    font-size: 20px;
-    margin: 20px;
+    padding: 15px 35px;
+    font-size: 18px;
+    margin: 15px;
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -66,7 +46,7 @@ button {
 }
 
 #no {
-    background: #111;
+    background: #222;
     color: white;
     position: absolute;
 }
@@ -75,20 +55,19 @@ button {
 
 <body>
 
-<h1>Hey Arin ❤️</h1>
+<h1>Hey Arin 💕<br>Will you be my Valentine?</h1>
 
-<button id="yes" onclick="celebrate()">Yes</button>
-<button id="no">No</button>
+<button id="yes" onclick="celebrate()">Yes ❤️</button>
+<button id="no">No 🙈</button>
 
 <script>
 function celebrate() {
     document.body.innerHTML = `
-    <h1 class="glow">Yayyy ❤️</h1>
-    <h2>
-    Fights happen. Love stays.<br><br>
-    You’re the luckiest girl in this world —<br>
-    because I’m still here, choosing us.<br><br>
-    Let’s fix things and celebrate today 💫
+    <h1 style="font-size:72px;">Yayyy ❤️</h1>
+    <h2 style="font-size:38px; line-height:1.5;">
+    Fights happen. Let’s fix things.<br>
+    Love stays.<br><br>
+    Let’s celebrate us today 💫
     </h2>
     `;
 }
@@ -105,4 +84,3 @@ noBtn.addEventListener("mouseover", () => {
 
 </body>
 </html>
-
